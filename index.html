@@ -317,7 +317,8 @@ var table = document.getElementById("myTable");
 	//document.getElementById("foto").innerHTML="<div style='display:block;width:2.7cm;height:3.5cm;border-radius:1px;border:2px solid #666;text-align:center'><br><br>Foto<br>3x4</div>"
 	
 	
-	document.getElementById("qr").innerHTML='';
+	var qq=document.getElementById("qr");
+	  qq.innerHTML='';
 		var qrcode=new QRCode(document.getElementById("qr"), {
 			    text:excelRows[no].nisn+" | "+excelRows[no].nama ,
 			    width: 80,
@@ -326,7 +327,9 @@ var table = document.getElementById("myTable");
 			    colorLight : "#ffffff",
 			    correctLevel : QRCode.CorrectLevel.L
 			});
-		 
+			setTimeout(()=>{
+		 var gg=qq.innerHTML;
+		 qq.innerHTML='<img src="smp.jpg" height="18" style="position:absolute;margin:30px 35px">'+gg;},200)
 		//return qrcode._oDrawing._elCanvas.toDataURL("image/png")
 	
 	
